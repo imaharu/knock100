@@ -26,7 +26,7 @@ print(Difference(X,Y))
 
 check_se = Union(X,Y)
 
-if  "se" in check_se:
+if "se" in check_se:
     print("Found se")
 else:
     print("Not found")

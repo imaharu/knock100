@@ -4,9 +4,6 @@ def n_gram(size,string):
         mogi.append(string[i:i+size:1])
     return mogi
 
-
-
-
 string = "I am an NLPer"
 word = string.split(" ")
 
