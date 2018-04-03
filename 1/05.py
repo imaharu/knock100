@@ -1,5 +1,4 @@
 def n_gram(size,string):
-    # result = [string[i: i+size] for i in range(0, len(string), size)]
     mogi = []
     for i in range(0,len(string) - 1):
         mogi.append(string[i:i+size:1])
