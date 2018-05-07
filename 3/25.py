@@ -1,20 +1,18 @@
+import json
 import re
-flag = False
-dic = {}
-count = 1
-before = ""
-with open('article.txt') as f:
-    for line in f:
-        if flag:
-            m = re.match(r'\|(?P<key>.+?) = (?P<value>.+)',line)
-            if m:
-                dic[m.group("key")] = m.group("value")
-                before = m.group("key")
-            else :
-                dic[before] += line
-        if re.search(r'{{基礎情報',line):
-            flag = True
-        elif re.match(r'}}',line):
-            flag = False
+fname = 'jawiki-country.json'
+def UK():
 
-print(dic)
+    with open(fname, 'r') as data_file:
+        for line in data_file:
+            data_json = json.loads(line)
+            if data_json['title'] == 'イギリス':
+                return data_json['text']
+
+    raise ValueError('イギリスの記事が見つからない')
+
+pattern = re.compile(r'^\{\{基礎情報.+?^\}\}',re.MULTILINE + re.DOTALL)
+basic_infos = pattern.findall(UK())
+
+for content in basic_infos:
+    print(content)
