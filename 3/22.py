@@ -1,7 +1,3 @@
-
-        #m = re.search(r'Category:(?P<category>.+?)((\])|(\|))',line)
-
-
 import json
 import re
 fname = 'jawiki-country.json'

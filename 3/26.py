@@ -17,5 +17,3 @@ with open('article.txt') as f:
             flag = True
         elif re.match(r'}}',line):
             flag = False
-
-print(dic['確立形態4'])
