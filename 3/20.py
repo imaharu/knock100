@@ -12,8 +12,6 @@ def UK():
 
     raise ValueError('イギリスの記事が見つからない')
 
-pattern = re.compile(r'^\{\{基礎情報.+?^\}\}',re.MULTILINE + re.DOTALL)
-
-contents = pattern.findall(UK())
+contents = UK()
 for content in contents:
     print(content)
