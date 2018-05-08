@@ -11,15 +11,12 @@ def UK():
 
     raise ValueError('イギリスの記事が見つからない')
 
-pattern = re.compile(r'^\[\[Category:(?P<category>.+?)\]\]$',re.MULTILINE + re.DOTALL)
+pattern = re.compile(r'^==(?P<section>.+?)==$',re.MULTILINE + re.DOTALL)
 contents = pattern.findall(UK())
 
 for content in contents:
-    content = re.sub(r"\|\*","",content)
-    pattern2 = re.compile(r'\|',re.MULTILINE + re.DOTALL)
-    for content in pattern2.split(content):
-        print(content)
-
-
-        #m = re.search(r'==(?P<section>.+?)==',line)
-        #print(re.sub(r'(=)', "", m.group("section")),len(re.findall('=+', m.group("section"))) + 1)
+    count = 1
+    m = re.findall("=",content)
+    for match in m:
+        count += 1
+    print(count,re.sub("=","",content))
