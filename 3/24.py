@@ -2,7 +2,6 @@ import json
 import re
 fname = 'jawiki-country.json'
 def UK():
-
     with open(fname, 'r') as data_file:
         for line in data_file:
             data_json = json.loads(line)
